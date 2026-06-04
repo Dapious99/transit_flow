@@ -1,14 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { 
-  Route, 
-  Radar, 
-  BarChart3, 
-  Smartphone, 
-  Bell, 
-  Leaf 
-} from 'lucide-react'
+import { Route, Radar, BarChart3, Smartphone, Bell, Leaf } from 'lucide-react'
+import { HowItWorksIllustration } from '@/components/illustrations/how-it-works-illustration'
 
 const features = [
   {
@@ -53,9 +47,7 @@ const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.12,
-    },
+    transition: { staggerChildren: 0.12 },
   },
 }
 
@@ -80,7 +72,7 @@ export function FeaturesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-3xl mx-auto text-center mb-16"
+          className="max-w-3xl mx-auto text-center mb-12"
         >
           <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 block">
             Platform Features
@@ -93,6 +85,20 @@ export function FeaturesSection() {
             From smart tracking to health monitoring, our integrated platform provides 
             everything you need for modern fleet management.
           </p>
+        </motion.div>
+
+        {/* How it works illustration */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="max-w-4xl mx-auto mb-16 px-2"
+        >
+          <p className="text-center text-xs text-muted-foreground uppercase tracking-widest mb-6 font-semibold">
+            How it works
+          </p>
+          <HowItWorksIllustration />
         </motion.div>
 
         {/* Features Grid */}
@@ -113,12 +119,10 @@ export function FeaturesSection() {
               <div className="absolute top-6 right-6 text-6xl font-bold text-foreground/5 group-hover:text-primary/10 transition-colors">
                 {String(index + 1).padStart(2, '0')}
               </div>
-
               {/* Icon */}
               <div className={`w-14 h-14 rounded-xl ${feature.color} flex items-center justify-center mb-6`}>
                 <feature.icon className="w-7 h-7" />
               </div>
-
               {/* Content */}
               <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
                 {feature.title}

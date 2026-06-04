@@ -2,18 +2,19 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { 
-  Target, 
-  Eye, 
-  Heart, 
+import {
+  Target,
+  Eye,
+  Heart,
   Lightbulb,
   ArrowRight,
 } from 'lucide-react'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { Button } from '@/components/ui/button'
+import { CityLogisticsIllustration } from '@/components/illustrations/city-logistics-illustration'
+import { DashboardIllustration } from '@/components/illustrations/dashboard-illustration'
 
-// Inline LinkedIn SVG — lucide doesn't ship a LinkedIn icon
 function LinkedInIcon({ className }: { className?: string }) {
   return (
     <svg
@@ -42,7 +43,7 @@ const values = [
   {
     icon: Heart,
     title: 'Customer First',
-    description: 'Our customers\' success is our success. We go above and beyond to ensure they achieve their operational goals.',
+    description: "Our customers' success is our success. We go above and beyond to ensure they achieve their operational goals.",
   },
   {
     icon: Lightbulb,
@@ -64,18 +65,6 @@ const team = [
     bio: 'AI/ML researcher from University of Lagos with a passion for applying data science to real-world mobility challenges.',
     linkedin: '#',
   },
-  // {
-  //   name: 'Tunde Adeyemi',
-  //   role: 'VP of Product',
-  //   bio: 'Product builder focused on creating intuitive mobility tools for Nigerian businesses and drivers.',
-  //   linkedin: '#',
-  // },
-  // {
-  //   name: 'Chioma Eze',
-  //   role: 'VP of Operations',
-  //   bio: 'Operations specialist with deep expertise in last-mile logistics and public-sector partnerships across Nigeria.',
-  //   linkedin: '#',
-  // },
 ]
 
 const teamAvatars: Record<string, React.ReactNode> = {
@@ -97,28 +86,10 @@ const teamAvatars: Record<string, React.ReactNode> = {
       <ellipse cx="48" cy="70" rx="17" ry="11" fill="oklch(0.65 0.15 200 / 0.5)" />
     </svg>
   ),
-  'Tunde Adeyemi': (
-    <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-24 h-24 rounded-full">
-      <circle cx="48" cy="48" r="48" fill="oklch(0.6 0.18 280 / 0.15)" />
-      <circle cx="48" cy="38" r="14" fill="oklch(0.6 0.18 280 / 0.4)" />
-      <ellipse cx="48" cy="72" rx="22" ry="14" fill="oklch(0.6 0.18 280 / 0.3)" />
-      <circle cx="48" cy="38" r="10" fill="oklch(0.6 0.18 280 / 0.7)" />
-      <ellipse cx="48" cy="70" rx="17" ry="11" fill="oklch(0.6 0.18 280 / 0.5)" />
-    </svg>
-  ),
-  'Chioma Eze': (
-    <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-24 h-24 rounded-full">
-      <circle cx="48" cy="48" r="48" fill="oklch(0.68 0.18 140 / 0.15)" />
-      <circle cx="48" cy="38" r="14" fill="oklch(0.68 0.18 140 / 0.4)" />
-      <ellipse cx="48" cy="72" rx="22" ry="14" fill="oklch(0.68 0.18 140 / 0.3)" />
-      <circle cx="48" cy="38" r="10" fill="oklch(0.68 0.18 140 / 0.7)" />
-      <ellipse cx="48" cy="70" rx="17" ry="11" fill="oklch(0.68 0.18 140 / 0.5)" />
-    </svg>
-  ),
 }
 
 const milestones = [
-  { year: '2024', title: 'Founded in Lagos', description: 'TransitFlow was born from a vision to solve Nigeria\'s urban logistics crisis, starting with Lagos.' },
+  { year: '2024', title: 'Founded in Lagos', description: "TransitFlow was born from a vision to solve Nigeria's urban logistics crisis, starting with Lagos." },
   { year: '2024', title: 'Platform Development', description: 'Built and tested our core fleet management platform with early-access partners across Lagos.' },
   { year: '2025', title: 'Product Launch', description: 'Officially launched to market, onboarding our first customers across Lagos and Abuja.' },
   { year: '2025', title: 'Expanding Cities', description: 'Growing our presence into Port Harcourt, Kano, and Ibadan, with more cities on the horizon.' },
@@ -128,13 +99,12 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-20 md:pt-40 md:pb-28 relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
         </div>
-
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -150,50 +120,67 @@ export default function AboutPage() {
               <span className="text-gradient">Nigerian Mobility</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              We&apos;re on a mission to transform how Nigeria moves goods and people, 
+              We&apos;re on a mission to transform how Nigeria moves goods and people,
               making transportation smarter, greener, and more efficient for every city.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Story Section */}
+      {/* Story + City illustration */}
       <section className="pb-24 md:pb-32">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-card rounded-2xl p-8 md:p-12 border border-border"
+              className="w-full lg:w-1/2"
             >
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">Our Story</h2>
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p>
-                  TransitFlow was founded in 2024 in Lagos by a team of logistics professionals and 
-                  AI researchers who experienced firsthand the chaos plaguing Nigerian transportation — 
-                  from gridlocked routes on the Lagos-Ibadan expressway to the lack of visibility in 
-                  inter-state freight movement.
-                </p>
-                <p>
-                  We believed there had to be a better way. By combining cutting-edge AI, IoT technology, 
-                  and a deep understanding of the Nigerian logistics landscape, we built a platform that 
-                  gives businesses complete control over their fleet operations — from real-time tracking in 
-                  dense urban traffic to predictive maintenance in remote corridors.
-                </p>
-                <p>
-                  Today, TransitFlow is growing fast, powering fleet operations for businesses across 
-                  Nigeria&apos;s major commercial hubs and helping them move smarter while reducing their 
-                  environmental footprint. We&apos;re just getting started.
-                </p>
+              <div className="bg-card rounded-2xl p-8 md:p-10 border border-border h-full">
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">Our Story</h2>
+                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                  <p>
+                    TransitFlow was founded in 2024 in Lagos by a team of logistics professionals and
+                    AI researchers who experienced firsthand the chaos plaguing Nigerian transportation —
+                    from gridlocked routes on the Lagos-Ibadan expressway to the lack of visibility in
+                    inter-state freight movement.
+                  </p>
+                  <p>
+                    We believed there had to be a better way. By combining cutting-edge AI, IoT technology,
+                    and a deep understanding of the Nigerian logistics landscape, we built a platform that
+                    gives businesses complete control over their fleet operations — from real-time tracking in
+                    dense urban traffic to predictive maintenance in remote corridors.
+                  </p>
+                  <p>
+                    Today, TransitFlow is growing fast, powering fleet operations for businesses across
+                    Nigeria&apos;s major commercial hubs and helping them move smarter while reducing their
+                    environmental footprint. We&apos;re just getting started.
+                  </p>
+                </div>
               </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="w-full lg:w-1/2"
+            >
+              <div className="rounded-2xl overflow-hidden border border-border aspect-[16/9] bg-card">
+                <CityLogisticsIllustration />
+              </div>
+              <p className="text-xs text-muted-foreground text-center mt-3">
+                AI-connected trucks navigating Nigeria&apos;s urban corridors in real time
+              </p>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Values Section */}
+      {/* Values */}
       <section className="py-24 md:py-32 bg-secondary/30">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div
@@ -211,7 +198,6 @@ export default function AboutPage() {
               <span className="text-gradient">Drives Us</span>
             </h2>
           </motion.div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
               <motion.div
@@ -225,19 +211,15 @@ export default function AboutPage() {
                 <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
                   <value.icon className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-3">
-                  {value.title}
-                </h3>
-                <p className="text-muted-foreground text-sm">
-                  {value.description}
-                </p>
+                <h3 className="text-lg font-semibold text-foreground mb-3">{value.title}</h3>
+                <p className="text-muted-foreground text-sm">{value.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Timeline Section */}
+      {/* Timeline */}
       <section className="py-24 md:py-32">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div
@@ -255,12 +237,9 @@ export default function AboutPage() {
               <span className="text-gradient">Milestones</span>
             </h2>
           </motion.div>
-
           <div className="max-w-3xl mx-auto">
             <div className="relative">
-              {/* Timeline line */}
               <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border" />
-
               <div className="space-y-8">
                 {milestones.map((milestone, index) => (
                   <motion.div
@@ -271,18 +250,12 @@ export default function AboutPage() {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     className="relative pl-20"
                   >
-                    {/* Year marker */}
                     <div className="absolute left-0 w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center border-4 border-background">
                       <span className="text-sm font-bold text-primary">{milestone.year}</span>
                     </div>
-
                     <div className="bg-card rounded-xl p-6 border border-border">
-                      <h3 className="text-lg font-semibold text-foreground mb-2">
-                        {milestone.title}
-                      </h3>
-                      <p className="text-muted-foreground text-sm">
-                        {milestone.description}
-                      </p>
+                      <h3 className="text-lg font-semibold text-foreground mb-2">{milestone.title}</h3>
+                      <p className="text-muted-foreground text-sm">{milestone.description}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -292,7 +265,37 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Dashboard illustration — visual break before Team */}
+      <section className="pb-0 bg-secondary/30">
+        <div className="container mx-auto px-4 md:px-6 pb-0">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-6xl mx-auto"
+          >
+            <div className="text-center mb-6">
+              <span className="text-primary font-semibold text-sm uppercase tracking-wider">
+                The Platform in Action
+              </span>
+              <h2 className="text-2xl md:text-3xl font-bold mt-2 mb-1 text-balance">
+                <span className="text-foreground">Every fleet. </span>
+                <span className="text-gradient">One command centre.</span>
+              </h2>
+              <p className="text-muted-foreground text-sm max-w-xl mx-auto">
+                A live view of everything happening across your vehicles — routes,
+                performance, alerts, and sustainability metrics — all in one place.
+              </p>
+            </div>
+            <div className="rounded-2xl overflow-hidden border border-border aspect-[960/380] bg-card">
+              <DashboardIllustration />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Team */}
       <section className="py-24 md:py-32 bg-secondary/30">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div
@@ -311,7 +314,7 @@ export default function AboutPage() {
             </h2>
           </motion.div>
 
-          <div className="flex flex-col md:flex-row md:mx-auto md:max-w-4xl justify-center gap-6">
+          <div className="flex flex-col sm:flex-row justify-center gap-6 max-w-2xl mx-auto">
             {team.map((member, index) => (
               <motion.div
                 key={member.name}
@@ -319,19 +322,14 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-card rounded-2xl p-6 border border-border text-center group"
+                className="bg-card rounded-2xl p-6 border border-border text-center group flex-1"
               >
-                {/* Avatar */}
                 <div className="mx-auto mb-4 w-24 h-24">
                   {teamAvatars[member.name]}
                 </div>
-
-                <h3 className="text-lg font-semibold text-foreground mb-1">
-                  {member.name}
-                </h3>
+                <h3 className="text-lg font-semibold text-foreground mb-1">{member.name}</h3>
                 <p className="text-primary text-sm mb-3">{member.role}</p>
                 <p className="text-muted-foreground text-sm mb-4">{member.bio}</p>
-
                 <div className="flex items-center justify-center">
                   <a
                     href={member.linkedin}
@@ -347,7 +345,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA */}
       <section className="py-24">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div
@@ -379,9 +377,7 @@ export default function AboutPage() {
                 size="lg"
                 className="border-border hover:bg-secondary text-foreground font-semibold px-8 rounded-full"
               >
-                <Link href="#">
-                  View Careers
-                </Link>
+                <Link href="#">View Careers</Link>
               </Button>
             </div>
           </motion.div>
