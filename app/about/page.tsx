@@ -56,14 +56,30 @@ const team = [
   {
     name: 'Emeka Okafor',
     role: 'CEO & Co-Founder',
-    bio: 'Logistics professional with 5+ years shaping supply chain operations across West Africa.',
+    bio: 'Logistics professional with 5+ years shaping supply chain operations across West Africa. Previously led fleet operations for a major Lagos-based freight company.',
     linkedin: '#',
+    color: '0.72 0.19 45',
   },
   {
     name: 'Dr. Amaka Nwosu',
     role: 'CTO & Co-Founder',
-    bio: 'AI/ML researcher from University of Lagos with a passion for applying data science to real-world mobility challenges.',
+    bio: 'AI/ML researcher from University of Lagos with deep expertise in reinforcement learning, computer vision, and real-world mobility data science.',
     linkedin: '#',
+    color: '0.65 0.15 200',
+  },
+  {
+    name: 'Tunde Adeyemi',
+    role: 'Head of Engineering',
+    bio: 'Full-stack and cloud engineer with experience building scalable IoT and SaaS platforms. AWS-certified with expertise in real-time data pipelines and distributed systems.',
+    linkedin: '#',
+    color: '0.6 0.18 280',
+  },
+  {
+    name: 'Ngozi Eze',
+    role: 'Head of Product & Operations',
+    bio: 'Product strategist with a background in logistics tech and digital transformation. Leads user research, product roadmap, and pilot partner relationships.',
+    linkedin: '#',
+    color: '0.4 0.18 140',
   },
 ]
 
@@ -84,6 +100,24 @@ const teamAvatars: Record<string, React.ReactNode> = {
       <ellipse cx="48" cy="72" rx="22" ry="14" fill="oklch(0.65 0.15 200 / 0.3)" />
       <circle cx="48" cy="38" r="10" fill="oklch(0.65 0.15 200 / 0.7)" />
       <ellipse cx="48" cy="70" rx="17" ry="11" fill="oklch(0.65 0.15 200 / 0.5)" />
+    </svg>
+  ),
+  'Tunde Adeyemi': (
+    <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-24 h-24 rounded-full">
+      <circle cx="48" cy="48" r="48" fill="oklch(0.6 0.18 280 / 0.15)" />
+      <circle cx="48" cy="38" r="14" fill="oklch(0.6 0.18 280 / 0.4)" />
+      <ellipse cx="48" cy="72" rx="22" ry="14" fill="oklch(0.6 0.18 280 / 0.3)" />
+      <circle cx="48" cy="38" r="10" fill="oklch(0.6 0.18 280 / 0.7)" />
+      <ellipse cx="48" cy="70" rx="17" ry="11" fill="oklch(0.6 0.18 280 / 0.5)" />
+    </svg>
+  ),
+  'Ngozi Eze': (
+    <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-24 h-24 rounded-full">
+      <circle cx="48" cy="48" r="48" fill="oklch(0.4 0.18 140 / 0.15)" />
+      <circle cx="48" cy="38" r="14" fill="oklch(0.4 0.18 140 / 0.4)" />
+      <ellipse cx="48" cy="72" rx="22" ry="14" fill="oklch(0.4 0.18 140 / 0.3)" />
+      <circle cx="48" cy="38" r="10" fill="oklch(0.4 0.18 140 / 0.7)" />
+      <ellipse cx="48" cy="70" rx="17" ry="11" fill="oklch(0.4 0.18 140 / 0.5)" />
     </svg>
   ),
 }
@@ -314,7 +348,7 @@ export default function AboutPage() {
             </h2>
           </motion.div>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-6 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {team.map((member, index) => (
               <motion.div
                 key={member.name}
@@ -322,14 +356,14 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-card rounded-2xl p-6 border border-border text-center group flex-1"
+                className="bg-card rounded-2xl p-6 border border-border text-center group"
               >
                 <div className="mx-auto mb-4 w-24 h-24">
                   {teamAvatars[member.name]}
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-1">{member.name}</h3>
-                <p className="text-primary text-sm mb-3">{member.role}</p>
-                <p className="text-muted-foreground text-sm mb-4">{member.bio}</p>
+                <h3 className="text-base font-semibold text-foreground mb-1">{member.name}</h3>
+                <p className="text-primary text-xs mb-3 font-medium">{member.role}</p>
+                <p className="text-muted-foreground text-xs leading-relaxed mb-4">{member.bio}</p>
                 <div className="flex items-center justify-center">
                   <a
                     href={member.linkedin}
@@ -342,6 +376,15 @@ export default function AboutPage() {
               </motion.div>
             ))}
           </div>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="text-center text-sm text-muted-foreground mt-8 max-w-2xl mx-auto"
+          >
+            Our team includes software engineers, AI/ML researchers, product designers, and logistics domain experts — collectively building Nigeria&apos;s most intelligent fleet management platform.
+          </motion.p>
         </div>
       </section>
 

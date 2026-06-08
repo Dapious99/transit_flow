@@ -10,29 +10,29 @@ const stats = [
     icon: TrendingUp,
     value: 40,
     suffix: '%',
-    label: 'Cost Reduction',
-    description: 'Average decrease in operational expenses',
+    label: 'Target Cost Reduction',
+    description: 'Beta goal: average decrease in operational expenses through AI routing',
   },
   {
     icon: Users,
-    value: 500,
+    value: 3,
     suffix: '+',
-    label: 'Businesses Served',
-    description: 'Across Lagos, Abuja, Port Harcourt & beyond',
+    label: 'Pilot Partners',
+    description: 'Logistics companies confirmed for beta programme in Lagos',
   },
   {
     icon: Truck,
-    value: 25,
-    suffix: 'K+',
-    label: 'Vehicles Managed',
-    description: 'Under smart monitoring systems in Nigeria',
+    value: 50,
+    suffix: '+',
+    label: 'Beta Applicants',
+    description: 'Businesses on our waitlist across Nigeria',
   },
   {
     icon: Leaf,
     value: 35,
     suffix: '%',
-    label: 'Carbon Reduction',
-    description: 'Through optimized route planning',
+    label: 'Target Carbon Reduction',
+    description: 'Beta goal: reduction through AI-optimised route planning',
   },
 ]
 
@@ -95,12 +95,12 @@ export function ImpactSection() {
             Our Impact
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance">
-            <span className="text-foreground">Measurable </span>
-            <span className="text-gradient">Impact</span>
+            <span className="text-foreground">Early Traction & </span>
+            <span className="text-gradient">Validated Targets</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Our technology is making a real difference in transportation management 
-            across the globe, with proven results that speak for themselves.
+            TransitFlow is in active beta development. These figures reflect our current traction
+            and validated performance targets from pilot testing with Nigerian logistics operators.
           </p>
         </motion.div>
 

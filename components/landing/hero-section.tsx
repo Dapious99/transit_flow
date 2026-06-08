@@ -53,26 +53,25 @@ export function HeroSection() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-muted-foreground mb-8">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            Transforming Urban Mobility
+            Nigeria&apos;s AI-Powered Logistics OS
           </motion.div>
 
           {/* Headline */}
           <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-balance">
-            <span className="text-foreground">Unified </span>
-            <span className="text-gradient">Logistics</span>
+            <span className="text-foreground">Move Goods Faster.</span>
             <br />
-            <span className="text-foreground">Platform</span>
+            <span className="text-gradient">Cut Costs. Build Trust.</span>
           </motion.h1>
 
           {/* Subheadline */}
           <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 leading-relaxed text-balance">
-            Unlock unparalleled business performance with real-time insights,
-            automation, an expanding marketplace, and digital payments.
-            Join the logistics revolution in the making.
+            TransitFlow is the unified platform that gives Nigerian logistics businesses
+            real-time fleet visibility, AI-optimised routing, and digital payment infrastructure —
+            turning fragmented, high-cost operations into a competitive advantage.
           </motion.p>
 
           {/* CTA Buttons */}
