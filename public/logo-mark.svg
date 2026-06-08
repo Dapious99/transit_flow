@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" fill="none" role="img" aria-label="TransitFlow">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF9D40"/>
+      <stop offset="1" stop-color="#FF5800"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Container -->
+  <rect width="44" height="44" rx="10" fill="url(#bg)"/>
+
+  <!-- Origin waypoints — three fleet origins on the left -->
+  <circle cx="6" cy="9"  r="2.5" fill="white"/>
+  <circle cx="6" cy="22" r="3"   fill="white"/>
+  <circle cx="6" cy="35" r="2.5" fill="white"/>
+
+  <!-- Three routes converging toward the arrow -->
+  <path d="M 8.5,9  Q 26,9  29,22" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 9,22   L 29,22"       stroke="white" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <path d="M 8.5,35 Q 26,35 29,22" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Forward arrow — one optimised direction -->
+  <polygon points="29,15 39,22 29,29" fill="white"/>
+</svg>

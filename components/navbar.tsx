@@ -4,9 +4,10 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Zap } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { Logo } from '@/components/logo'
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -43,14 +44,8 @@ export function Navbar() {
       <div className="container mx-auto px-4 md:px-6">
         <nav className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="relative w-10 h-10 rounded-xl bg-primary flex items-center justify-center group-hover:glow-primary transition-all duration-300">
-              <Zap className="w-6 h-6 text-primary-foreground" />
-            </div>
-            <span className="text-xl font-bold tracking-tight">
-              <span className="text-foreground">Transit</span>
-              <span className="text-gradient">Flow</span>
-            </span>
+          <Link href="/" className="group hover:opacity-90 transition-opacity duration-200">
+            <Logo id="nav" markSize={40} />
           </Link>
 
           {/* Desktop Navigation */}

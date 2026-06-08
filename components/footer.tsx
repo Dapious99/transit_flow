@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { Zap, Globe, Mail, MapPin, Phone, ExternalLink } from 'lucide-react'
+import { Globe, Mail, MapPin, Phone, ExternalLink } from 'lucide-react'
+import { Logo } from '@/components/logo'
 
 const quickLinks = [
   { href: '/', label: 'Home' },
@@ -34,14 +35,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-                <Zap className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <span className="text-xl font-bold tracking-tight">
-                <span className="text-foreground">Transit</span>
-                <span className="text-gradient">Flow</span>
-              </span>
+            <Link href="/" className="inline-block mb-6 hover:opacity-90 transition-opacity">
+              <Logo id="footer" markSize={40} />
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
               Revolutionizing Nigerian urban transport with AI-powered smart mobility solutions. 
