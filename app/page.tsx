@@ -3,12 +3,14 @@ import { Footer } from '@/components/footer'
 import { HeroSection } from '@/components/landing/hero-section'
 import { ProblemsSection } from '@/components/landing/problems-section'
 import { FeaturesSection } from '@/components/landing/features-section'
+import { ProductVisualsSection } from '@/components/landing/product-visuals-section'
 import { AITechnologySection } from '@/components/landing/ai-technology-section'
 import { InfrastructureSection } from '@/components/landing/infrastructure-section'
 import { WhyNowSection } from '@/components/landing/why-now-section'
 import { MarketSection } from '@/components/landing/market-section'
-import { ImpactSection } from '@/components/landing/impact-section'
 import { TractionSection } from '@/components/landing/traction-section'
+import { FoundersSection } from '@/components/landing/founders-section'
+import { ImpactSection } from '@/components/landing/impact-section'
 import { RoadmapSection } from '@/components/landing/roadmap-section'
 import { CTASection } from '@/components/landing/cta-section'
 
@@ -22,21 +24,25 @@ export default function HomePage() {
       <ProblemsSection />
       {/* 3. Solution / Features */}
       <FeaturesSection />
-      {/* 4. AI Technology */}
+      {/* 4. Product Visuals — what the product looks like */}
+      <ProductVisualsSection />
+      {/* 5. AI Technology */}
       <AITechnologySection />
-      {/* 5. Technology & Infrastructure */}
+      {/* 6. Technology & Infrastructure */}
       <InfrastructureSection />
-      {/* 6. Why Now */}
+      {/* 7. Why Now */}
       <WhyNowSection />
-      {/* 7. Market Opportunity */}
+      {/* 8. Market Opportunity */}
       <MarketSection />
-      {/* 8. Traction / MVP */}
+      {/* 9. Traction / MVP */}
       <TractionSection />
-      {/* 9. Impact / Validated Targets */}
+      {/* 10. Founders */}
+      <FoundersSection />
+      {/* 11. Impact / Validated Targets */}
       <ImpactSection />
-      {/* 10. Roadmap */}
+      {/* 12. Roadmap */}
       <RoadmapSection />
-      {/* 11. CTA */}
+      {/* 13. CTA */}
       <CTASection />
       <Footer />
     </main>
