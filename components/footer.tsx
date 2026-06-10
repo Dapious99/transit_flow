@@ -1,32 +1,30 @@
-import Link from 'next/link'
-import { Globe, Mail, MapPin, Phone, ExternalLink } from 'lucide-react'
-import { Logo } from '@/components/logo'
+import Link from "next/link";
+import { Globe, Mail, MapPin, Phone, ExternalLink } from "lucide-react";
+import { Logo } from "@/components/logo";
 
 const quickLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/solutions', label: 'Solutions' },
-  { href: '/technology', label: 'Technology' },
-  { href: '/impact', label: 'Impact' },
-]
+  { href: "/", label: "Home" },
+  { href: "/solutions", label: "Solutions" },
+  { href: "/technology", label: "Technology" },
+  { href: "/impact", label: "Impact" },
+];
 
 const supportLinks = [
-  { href: '/about', label: 'About Us' },
-  { href: '/contact', label: 'Contact' },
-  { href: '#', label: 'Documentation' },
-  { href: '#', label: 'Support Center' },
-]
+  { href: "/about", label: "About Us" },
+  { href: "/contact", label: "Contact" },
+];
 
 const legalLinks = [
-  { href: '/privacy', label: 'Privacy Policy' },
-  { href: '/terms', label: 'Terms of Service' },
-  { href: '/cookies', label: 'Cookie Policy' },
-]
+  { href: "/privacy", label: "Privacy Policy" },
+  { href: "/terms", label: "Terms of Service" },
+  { href: "/cookies", label: "Cookie Policy" },
+];
 
 const socialLinks = [
-  { href: '#', icon: Globe, label: 'Website' },
-  { href: '#', icon: Mail, label: 'Email' },
-  { href: '#', icon: ExternalLink, label: 'Connect' },
-]
+  { href: "#", icon: Globe, label: "Website" },
+  { href: "#", icon: Mail, label: "Email" },
+  { href: "#", icon: ExternalLink, label: "Connect" },
+];
 
 export function Footer() {
   return (
@@ -35,12 +33,16 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-block mb-6 hover:opacity-90 transition-opacity">
+            <Link
+              href="/"
+              className="inline-block mb-6 hover:opacity-90 transition-opacity"
+            >
               <Logo id="footer" markSize={40} />
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-              Revolutionizing Nigerian urban transport with AI-powered smart mobility solutions. 
-              Building a more sustainable, efficient, and connected future for cities across Nigeria.
+              Revolutionizing Nigerian urban transport with AI-powered smart
+              mobility solutions. Building a more sustainable, efficient, and
+              connected future for cities across Nigeria.
             </p>
             <div className="flex gap-3">
               {socialLinks.map((social) => (
@@ -96,17 +98,26 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-sm text-muted-foreground">
                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <span>Plot 14, Admiralty Way, Lekki Phase 1<br />Lagos, Nigeria</span>
+                <span>
+                  Plot 14, Admiralty Way, Lekki Phase 1<br />
+                  Lagos, Nigeria
+                </span>
               </li>
               <li className="flex items-center gap-3 text-sm text-muted-foreground">
                 <Mail className="w-5 h-5 text-primary shrink-0" />
-                <a href="mailto:hello@transitflow.ng" className="hover:text-primary transition-colors">
+                <a
+                  href="mailto:hello@transitflow.ng"
+                  className="hover:text-primary transition-colors"
+                >
                   hello@transitflow.ng
                 </a>
               </li>
               <li className="flex items-center gap-3 text-sm text-muted-foreground">
                 <Phone className="w-5 h-5 text-primary shrink-0" />
-                <a href="tel:+2348001234567" className="hover:text-primary transition-colors">
+                <a
+                  href="tel:+2348001234567"
+                  className="hover:text-primary transition-colors"
+                >
                   +234 800 123 4567
                 </a>
               </li>
@@ -133,5 +144,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
