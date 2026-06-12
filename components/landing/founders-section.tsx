@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
+import ceoImg from '@/public/ceo.jpg'
+import ctoImg from '@/public/cto.jpg'
 import { ArrowRight } from 'lucide-react'
 
 function LinkedInIcon({ className }: { className?: string }) {
@@ -15,13 +17,13 @@ function LinkedInIcon({ className }: { className?: string }) {
 
 function CEOAvatar() {
   return (
-    <Image src="/ceo.jpg" alt="CEO" width={96} height={96} className="w-full h-full object-cover rounded-full" />
+    <Image src={ceoImg} alt="CEO" width={96} height={96} className="w-full h-full object-cover rounded-full" />
   )
 }
 
 function CTOAvatar() {
   return (
-    <Image src="/cto.jpg" alt="CTO" width={96} height={96} className="w-full h-full object-cover rounded-full" />
+    <Image src={ctoImg} alt="CTO" width={96} height={96} className="w-full h-full object-cover rounded-full" />
   )
 }
 
