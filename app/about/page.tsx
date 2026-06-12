@@ -308,7 +308,7 @@ export default function AboutPage() {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center sm:items-stretch gap-6 max-w-5xl mx-auto">
             {team.map((member, index) => (
               <motion.div
                 key={member.name}
@@ -316,7 +316,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-card rounded-2xl p-6 border border-border text-center group"
+                className="bg-card w-full sm:w-[280px] rounded-2xl p-6 border border-border text-center group"
               >
                 <div className="mx-auto mb-4 w-24 h-24">
                   {teamAvatars[member.name]}
