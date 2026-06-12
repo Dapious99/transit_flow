@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 
 function LinkedInIcon({ className }: { className?: string }) {
@@ -14,13 +15,13 @@ function LinkedInIcon({ className }: { className?: string }) {
 
 function CEOAvatar() {
   return (
-    <img src="/ceo.jpg" alt="CEO" className="w-full h-full object-cover rounded-full" />
+    <Image src="/ceo.jpg" alt="CEO" width={96} height={96} className="w-full h-full object-cover rounded-full" />
   )
 }
 
 function CTOAvatar() {
   return (
-    <img src="/cto.jpg" alt="CTO" className="w-full h-full object-cover rounded-full" />
+    <Image src="/cto.jpg" alt="CTO" width={96} height={96} className="w-full h-full object-cover rounded-full" />
   )
 }
 
@@ -40,9 +41,9 @@ const founders = [
     quoteAccent: 'border-primary/40',
   },
   {
-    name: 'Dr. Amaka Nwosu',
+    name: 'Amaka Nwosu',
     role: 'CTO & Co-Founder',
-    bio: 'AI/ML researcher from the University of Lagos with deep expertise in reinforcement learning, computer vision, and real-world mobility data science. Author of published work on urban traffic pattern prediction in sub-Saharan cities.',
+    bio: 'AI/ML researcher with deep expertise in reinforcement learning, computer vision, and real-world mobility data science. Author of published work on urban traffic pattern prediction in sub-Saharan cities.',
     quote: "The AI we've built isn't a generic product pasted onto African roads. It was trained on Nigerian traffic data, Nigerian road conditions, and Nigerian logistics patterns. That specificity is our edge.",
     linkedin: '#',
     avatar: 'cto' as const,

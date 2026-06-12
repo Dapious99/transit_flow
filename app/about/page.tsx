@@ -69,12 +69,14 @@ const team = [
   },
 ]
 
+import Image from 'next/image'
+
 const teamAvatars: Record<string, React.ReactNode> = {
   'Emeka Okafor': (
-    <img src="/ceo.jpg" alt="Emeka Okafor" className="w-24 h-24 rounded-full object-cover" />
+    <Image src="/ceo.jpg" alt="Emeka Okafor" width={96} height={96} className="w-24 h-24 rounded-full object-cover" />
   ),
   'Dr. Amaka Nwosu': (
-    <img src="/cto.jpg" alt="Dr. Amaka Nwosu" className="w-24 h-24 rounded-full object-cover" />
+    <Image src="/cto.jpg" alt="Dr. Amaka Nwosu" width={96} height={96} className="w-24 h-24 rounded-full object-cover" />
   ),
 }
 
