@@ -67,58 +67,14 @@ const team = [
     linkedin: '#',
     color: '0.65 0.15 200',
   },
-  {
-    name: 'Tunde Adeyemi',
-    role: 'Head of Engineering',
-    bio: 'Full-stack and cloud engineer with experience building scalable IoT and SaaS platforms. AWS-certified with expertise in real-time data pipelines and distributed systems.',
-    linkedin: '#',
-    color: '0.6 0.18 280',
-  },
-  {
-    name: 'Ngozi Eze',
-    role: 'Head of Product & Operations',
-    bio: 'Product strategist with a background in logistics tech and digital transformation. Leads user research, product roadmap, and pilot partner relationships.',
-    linkedin: '#',
-    color: '0.4 0.18 140',
-  },
 ]
 
 const teamAvatars: Record<string, React.ReactNode> = {
   'Emeka Okafor': (
-    <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-24 h-24 rounded-full">
-      <circle cx="48" cy="48" r="48" fill="oklch(0.72 0.19 45 / 0.15)" />
-      <circle cx="48" cy="38" r="14" fill="oklch(0.72 0.19 45 / 0.4)" />
-      <ellipse cx="48" cy="72" rx="22" ry="14" fill="oklch(0.72 0.19 45 / 0.3)" />
-      <circle cx="48" cy="38" r="10" fill="oklch(0.72 0.19 45 / 0.7)" />
-      <ellipse cx="48" cy="70" rx="17" ry="11" fill="oklch(0.72 0.19 45 / 0.5)" />
-    </svg>
+    <img src="/ceo.jpg" alt="Emeka Okafor" className="w-24 h-24 rounded-full object-cover" />
   ),
   'Dr. Amaka Nwosu': (
-    <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-24 h-24 rounded-full">
-      <circle cx="48" cy="48" r="48" fill="oklch(0.65 0.15 200 / 0.15)" />
-      <circle cx="48" cy="38" r="14" fill="oklch(0.65 0.15 200 / 0.4)" />
-      <ellipse cx="48" cy="72" rx="22" ry="14" fill="oklch(0.65 0.15 200 / 0.3)" />
-      <circle cx="48" cy="38" r="10" fill="oklch(0.65 0.15 200 / 0.7)" />
-      <ellipse cx="48" cy="70" rx="17" ry="11" fill="oklch(0.65 0.15 200 / 0.5)" />
-    </svg>
-  ),
-  'Tunde Adeyemi': (
-    <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-24 h-24 rounded-full">
-      <circle cx="48" cy="48" r="48" fill="oklch(0.6 0.18 280 / 0.15)" />
-      <circle cx="48" cy="38" r="14" fill="oklch(0.6 0.18 280 / 0.4)" />
-      <ellipse cx="48" cy="72" rx="22" ry="14" fill="oklch(0.6 0.18 280 / 0.3)" />
-      <circle cx="48" cy="38" r="10" fill="oklch(0.6 0.18 280 / 0.7)" />
-      <ellipse cx="48" cy="70" rx="17" ry="11" fill="oklch(0.6 0.18 280 / 0.5)" />
-    </svg>
-  ),
-  'Ngozi Eze': (
-    <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-24 h-24 rounded-full">
-      <circle cx="48" cy="48" r="48" fill="oklch(0.4 0.18 140 / 0.15)" />
-      <circle cx="48" cy="38" r="14" fill="oklch(0.4 0.18 140 / 0.4)" />
-      <ellipse cx="48" cy="72" rx="22" ry="14" fill="oklch(0.4 0.18 140 / 0.3)" />
-      <circle cx="48" cy="38" r="10" fill="oklch(0.4 0.18 140 / 0.7)" />
-      <ellipse cx="48" cy="70" rx="17" ry="11" fill="oklch(0.4 0.18 140 / 0.5)" />
-    </svg>
+    <img src="/cto.jpg" alt="Dr. Amaka Nwosu" className="w-24 h-24 rounded-full object-cover" />
   ),
 }
 
