@@ -1,6 +1,22 @@
 import Link from "next/link";
-import { Globe, Mail, MapPin, Phone, ExternalLink } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { Logo } from "@/components/logo";
+
+function FacebookIcon({ className }: { className?: string }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M9.198 21.5h4V12h3l.394-3h-3.394V7.5c0-.86.236-1.5 1.5-1.5h1.5V3.428C16.035 3.398 15.012 3.3 13.924 3.3 11.026 3.3 9.198 5.1 9.198 8.4V9H6v3h3.198v9.5z"/>
+    </svg>
+  )
+}
+
+function XIcon({ className }: { className?: string }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+    </svg>
+  )
+}
 
 const quickLinks = [
   { href: "/", label: "Home" },
@@ -21,9 +37,9 @@ const legalLinks = [
 ];
 
 const socialLinks = [
-  { href: "#", icon: Globe, label: "Website" },
-  { href: "#", icon: Mail, label: "Email" },
-  { href: "#", icon: ExternalLink, label: "Connect" },
+  { href: "https://www.facebook.com/share/1HE3mdccLE/", icon: FacebookIcon, label: "Facebook" },
+  { href: "https://x.com/TransitFloww", icon: XIcon, label: "X" },
+  { href: "mailto:hello@transitflow.site", icon: Mail, label: "Email" },
 ];
 
 export function Footer() {
@@ -106,10 +122,10 @@ export function Footer() {
               <li className="flex items-center gap-3 text-sm text-muted-foreground">
                 <Mail className="w-5 h-5 text-primary shrink-0" />
                 <a
-                  href="mailto:hello@transitflow.ng"
+                  href="mailto:hello@transitflow.site"
                   className="hover:text-primary transition-colors"
                 >
-                  hello@transitflow.ng
+                  hello@transitflow.site
                 </a>
               </li>
               <li className="flex items-center gap-3 text-sm text-muted-foreground">

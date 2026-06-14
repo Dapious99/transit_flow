@@ -19,8 +19,8 @@ const contactMethods = [
     icon: Mail,
     title: 'Email Us',
     description: 'Our team typically responds within 24 hours',
-    value: 'hello@transitflow.ng',
-    href: 'mailto:hello@transitflow.ng',
+    value: 'hello@transitflow.site',
+    href: 'mailto:hello@transitflow.site',
   },
   {
     icon: Phone,
@@ -57,16 +57,42 @@ export default function ContactPage() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [submitError, setSubmitError] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500))
-    
-    setIsSubmitting(false)
-    setIsSubmitted(true)
+    setSubmitError(false)
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/hello@transitflow.site', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company || 'N/A',
+          inquiry_type: formData.inquiryType,
+          message: formData.message,
+          _subject: `TransitFlow Inquiry [${formData.inquiryType}] from ${formData.name}`,
+          _captcha: 'false',
+        }),
+      })
+
+      const result = await response.json()
+      if (result.success === 'true' || result.success === true) {
+        setIsSubmitted(true)
+      } else {
+        setSubmitError(true)
+      }
+    } catch {
+      setSubmitError(true)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -303,6 +329,16 @@ export default function ContactPage() {
                         </>
                       )}
                     </Button>
+
+                    {submitError && (
+                      <p className="text-center text-sm text-red-500 mt-2">
+                        Something went wrong. Please try again or email us directly at{' '}
+                        <a href="mailto:hello@transitflow.site" className="underline">
+                          hello@transitflow.site
+                        </a>
+                        .
+                      </p>
+                    )}
                   </form>
                 </>
               )}

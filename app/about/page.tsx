@@ -1,19 +1,13 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import Link from 'next/link'
-import {
-  Target,
-  Eye,
-  Heart,
-  Lightbulb,
-  ArrowRight,
-} from 'lucide-react'
-import { Navbar } from '@/components/navbar'
-import { Footer } from '@/components/footer'
-import { Button } from '@/components/ui/button'
-import { CityLogisticsIllustration } from '@/components/illustrations/city-logistics-illustration'
-import { DashboardIllustration } from '@/components/illustrations/dashboard-illustration'
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { Target, Eye, Heart, Lightbulb, ArrowRight, Mail } from "lucide-react";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
+import { Button } from "@/components/ui/button";
+import { CityLogisticsIllustration } from "@/components/illustrations/city-logistics-illustration";
+import { DashboardIllustration } from "@/components/illustrations/dashboard-illustration";
 
 function LinkedInIcon({ className }: { className?: string }) {
   return (
@@ -26,68 +20,136 @@ function LinkedInIcon({ className }: { className?: string }) {
     >
       <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
     </svg>
-  )
+  );
+}
+
+function FacebookIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M9.198 21.5h4V12h3l.394-3h-3.394V7.5c0-.86.236-1.5 1.5-1.5h1.5V3.428C16.035 3.398 15.012 3.3 13.924 3.3 11.026 3.3 9.198 5.1 9.198 8.4V9H6v3h3.198v9.5z" />
+    </svg>
+  );
+}
+
+function XIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  );
 }
 
 const values = [
   {
     icon: Target,
-    title: 'Mission-Driven',
-    description: 'Every decision we make is guided by our mission to make transportation more efficient, sustainable, and accessible across Nigeria.',
+    title: "Mission-Driven",
+    description:
+      "Every decision we make is guided by our mission to make transportation more efficient, sustainable, and accessible across Nigeria.",
   },
   {
     icon: Eye,
-    title: 'Transparency',
-    description: 'We believe in open communication with our customers, partners, and team members. No hidden fees, no surprises.',
+    title: "Transparency",
+    description:
+      "We believe in open communication with our customers, partners, and team members. No hidden fees, no surprises.",
   },
   {
     icon: Heart,
-    title: 'Customer First',
-    description: "Our customers' success is our success. We go above and beyond to ensure they achieve their operational goals.",
+    title: "Customer First",
+    description:
+      "Our customers' success is our success. We go above and beyond to ensure they achieve their operational goals.",
   },
   {
     icon: Lightbulb,
-    title: 'Innovation',
-    description: 'We continuously push boundaries, exploring new technologies and approaches to solve the unique logistics challenges of Nigeria.',
+    title: "Innovation",
+    description:
+      "We continuously push boundaries, exploring new technologies and approaches to solve the unique logistics challenges of Nigeria.",
   },
-]
+];
 
 const team = [
   {
-    name: 'Emeka Okafor',
-    role: 'CEO & Co-Founder',
-    bio: 'Logistics professional with 5+ years shaping supply chain operations across West Africa. Previously led fleet operations for a major Lagos-based freight company.',
-    linkedin: '#',
-    color: '0.72 0.19 45',
+    name: "Charles Okwunweoka",
+    role: "CEO & Co-Founder",
+    bio: "Logistics professional with 5+ years shaping supply chain operations across West Africa. Previously led fleet operations for a major Lagos-based freight company.",
+    email: "mailto:charles@transitflow.site",
+    linkedin: "https://linkedin.com/in/charles-okwunweoka-80409a415",
+    x: "https://x.com/Apocalypse_JR",
+    facebook: "https://www.facebook.com/share/1D1SqTLUZ9/",
   },
   {
-    name: 'Dr. Amaka Nwosu',
-    role: 'CTO & Co-Founder',
-    bio: 'AI/ML researcher from University of Lagos with deep expertise in reinforcement learning, computer vision, and real-world mobility data science.',
-    linkedin: '#',
-    color: '0.65 0.15 200',
+    name: "Amaka Nwosu",
+    role: "CTO & Co-Founder",
+    bio: "AI/ML researcher from University of Lagos with deep expertise in reinforcement learning, computer vision, and real-world mobility data science.",
+    email: "mailto:amaka@transitflow.site",
+    linkedin: "",
+    x: "",
+    facebook: "",
   },
-]
+];
 
-import Image from 'next/image'
-import ceoImg from '@/public/ceo.jpg'
-import ctoImg from '@/public/cto.jpg'
+import Image from "next/image";
+import ceoImg from "@/public/ceo.jpg";
+import ctoImg from "@/public/cto.jpg";
 
 const teamAvatars: Record<string, React.ReactNode> = {
-  'Emeka Okafor': (
-    <Image src={ceoImg} alt="Emeka Okafor" width={96} height={96} className="w-24 h-24 rounded-full object-cover" />
+  "Charles Okwunweoka": (
+    <Image
+      src={ceoImg}
+      alt="Charles Okwunweoka"
+      width={96}
+      height={96}
+      className="w-24 h-24 rounded-full object-cover"
+    />
   ),
-  'Dr. Amaka Nwosu': (
-    <Image src={ctoImg} alt="Dr. Amaka Nwosu" width={96} height={96} className="w-24 h-24 rounded-full object-cover" />
+  "Amaka Nwosu": (
+    <Image
+      src={ctoImg}
+      alt="Amaka Nwosu"
+      width={96}
+      height={96}
+      className="w-24 h-24 rounded-full object-cover"
+    />
   ),
-}
+};
 
 const milestones = [
-  { year: '2024', title: 'Founded in Lagos', description: "TransitFlow was born from a vision to solve Nigeria's urban logistics crisis, starting with Lagos." },
-  { year: '2024', title: 'Platform Development', description: 'Built and tested our core fleet management platform with early-access partners across Lagos.' },
-  { year: '2025', title: 'Product Launch', description: 'Officially launched to market, onboarding our first customers across Lagos and Abuja.' },
-  { year: '2025', title: 'Expanding Cities', description: 'Growing our presence into Port Harcourt, Kano, and Ibadan, with more cities on the horizon.' },
-]
+  {
+    year: "2024",
+    title: "Founded in Lagos",
+    description:
+      "TransitFlow was born from a vision to solve Nigeria's urban logistics crisis, starting with Lagos.",
+  },
+  {
+    year: "2024",
+    title: "Platform Development",
+    description:
+      "Built and tested our core fleet management platform with early-access partners across Lagos.",
+  },
+  {
+    year: "2025",
+    title: "Product Launch",
+    description:
+      "Officially launched to market, onboarding our first customers across Lagos and Abuja.",
+  },
+  {
+    year: "2025",
+    title: "Expanding Cities",
+    description:
+      "Growing our presence into Port Harcourt, Kano, and Ibadan, with more cities on the horizon.",
+  },
+];
 
 export default function AboutPage() {
   return (
@@ -114,8 +176,9 @@ export default function AboutPage() {
               <span className="text-gradient">Nigerian Mobility</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              We&apos;re on a mission to transform how Nigeria moves goods and people,
-              making transportation smarter, greener, and more efficient for every city.
+              We&apos;re on a mission to transform how Nigeria moves goods and
+              people, making transportation smarter, greener, and more efficient
+              for every city.
             </p>
           </motion.div>
         </div>
@@ -133,24 +196,31 @@ export default function AboutPage() {
               className="w-full lg:w-1/2"
             >
               <div className="bg-card rounded-2xl p-8 md:p-10 border border-border h-full">
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">Our Story</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+                  Our Story
+                </h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    TransitFlow was founded in 2024 in Lagos by a team of logistics professionals and
-                    AI researchers who experienced firsthand the chaos plaguing Nigerian transportation —
-                    from gridlocked routes on the Lagos-Ibadan expressway to the lack of visibility in
-                    inter-state freight movement.
+                    TransitFlow was founded in 2024 in Lagos by a team of
+                    logistics professionals and AI researchers who experienced
+                    firsthand the chaos plaguing Nigerian transportation — from
+                    gridlocked routes on the Lagos-Ibadan expressway to the lack
+                    of visibility in inter-state freight movement.
                   </p>
                   <p>
-                    We believed there had to be a better way. By combining cutting-edge AI, IoT technology,
-                    and a deep understanding of the Nigerian logistics landscape, we built a platform that
-                    gives businesses complete control over their fleet operations — from real-time tracking in
-                    dense urban traffic to predictive maintenance in remote corridors.
+                    We believed there had to be a better way. By combining
+                    cutting-edge AI, IoT technology, and a deep understanding of
+                    the Nigerian logistics landscape, we built a platform that
+                    gives businesses complete control over their fleet
+                    operations — from real-time tracking in dense urban traffic
+                    to predictive maintenance in remote corridors.
                   </p>
                   <p>
-                    Today, TransitFlow is growing fast, powering fleet operations for businesses across
-                    Nigeria&apos;s major commercial hubs and helping them move smarter while reducing their
-                    environmental footprint. We&apos;re just getting started.
+                    Today, TransitFlow is growing fast, powering fleet
+                    operations for businesses across Nigeria&apos;s major
+                    commercial hubs and helping them move smarter while reducing
+                    their environmental footprint. We&apos;re just getting
+                    started.
                   </p>
                 </div>
               </div>
@@ -167,7 +237,8 @@ export default function AboutPage() {
                 <CityLogisticsIllustration />
               </div>
               <p className="text-xs text-muted-foreground text-center mt-3">
-                AI-connected trucks navigating Nigeria&apos;s urban corridors in real time
+                AI-connected trucks navigating Nigeria&apos;s urban corridors in
+                real time
               </p>
             </motion.div>
           </div>
@@ -205,8 +276,12 @@ export default function AboutPage() {
                 <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
                   <value.icon className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-3">{value.title}</h3>
-                <p className="text-muted-foreground text-sm">{value.description}</p>
+                <h3 className="text-lg font-semibold text-foreground mb-3">
+                  {value.title}
+                </h3>
+                <p className="text-muted-foreground text-sm">
+                  {value.description}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -245,11 +320,17 @@ export default function AboutPage() {
                     className="relative pl-20"
                   >
                     <div className="absolute left-0 w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center border-4 border-background">
-                      <span className="text-sm font-bold text-primary">{milestone.year}</span>
+                      <span className="text-sm font-bold text-primary">
+                        {milestone.year}
+                      </span>
                     </div>
                     <div className="bg-card rounded-xl p-6 border border-border">
-                      <h3 className="text-lg font-semibold text-foreground mb-2">{milestone.title}</h3>
-                      <p className="text-muted-foreground text-sm">{milestone.description}</p>
+                      <h3 className="text-lg font-semibold text-foreground mb-2">
+                        {milestone.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm">
+                        {milestone.description}
+                      </p>
                     </div>
                   </motion.div>
                 ))}
@@ -278,8 +359,9 @@ export default function AboutPage() {
                 <span className="text-gradient">One command centre.</span>
               </h2>
               <p className="text-muted-foreground text-sm max-w-xl mx-auto">
-                A live view of everything happening across your vehicles — routes,
-                performance, alerts, and sustainability metrics — all in one place.
+                A live view of everything happening across your vehicles —
+                routes, performance, alerts, and sustainability metrics — all in
+                one place.
               </p>
             </div>
             <div className="rounded-2xl overflow-hidden border border-border aspect-[960/380] bg-card">
@@ -316,22 +398,63 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-card w-full sm:w-[280px] rounded-2xl p-6 border border-border text-center group"
+                className="bg-card w-full md:w-[280px] rounded-2xl p-6 border border-border text-center group"
               >
                 <div className="mx-auto mb-4 w-24 h-24">
                   {teamAvatars[member.name]}
                 </div>
-                <h3 className="text-base font-semibold text-foreground mb-1">{member.name}</h3>
-                <p className="text-primary text-xs mb-3 font-medium">{member.role}</p>
-                <p className="text-muted-foreground text-xs leading-relaxed mb-4">{member.bio}</p>
-                <div className="flex items-center justify-center">
-                  <a
-                    href={member.linkedin}
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                    aria-label={`${member.name} on LinkedIn`}
-                  >
-                    <LinkedInIcon className="w-5 h-5" />
-                  </a>
+                <h3 className="text-base font-semibold text-foreground mb-1">
+                  {member.name}
+                </h3>
+                <p className="text-primary text-xs mb-3 font-medium">
+                  {member.role}
+                </p>
+                <p className="text-muted-foreground text-xs leading-relaxed mb-4">
+                  {member.bio}
+                </p>
+                <div className="flex items-center justify-center gap-3">
+                  {member.email && (
+                    <a
+                      href={member.email}
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                      aria-label={`Email ${member.name}`}
+                    >
+                      <Mail className="w-5 h-5" />
+                    </a>
+                  )}
+                  {member.linkedin && (
+                    <a
+                      href={member.linkedin}
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                      aria-label={`${member.name} on LinkedIn`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <LinkedInIcon className="w-5 h-5" />
+                    </a>
+                  )}
+                  {member.x && (
+                    <a
+                      href={member.x}
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                      aria-label={`${member.name} on X`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <XIcon className="w-5 h-5" />
+                    </a>
+                  )}
+                  {member.facebook && (
+                    <a
+                      href={member.facebook}
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                      aria-label={`${member.name} on Facebook`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FacebookIcon className="w-5 h-5" />
+                    </a>
+                  )}
                 </div>
               </motion.div>
             ))}
@@ -343,7 +466,9 @@ export default function AboutPage() {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="text-center text-sm text-muted-foreground mt-8 max-w-2xl mx-auto"
           >
-            Our team includes software engineers, AI/ML researchers, product designers, and logistics domain experts — collectively building Nigeria&apos;s most intelligent fleet management platform.
+            Our team includes software engineers, AI/ML researchers, product
+            designers, and logistics domain experts — collectively building
+            Nigeria&apos;s most intelligent fleet management platform.
           </motion.p>
         </div>
       </section>
@@ -363,7 +488,8 @@ export default function AboutPage() {
               <span className="text-gradient">Mission</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Whether you&apos;re looking to partner with us or join our team, we&apos;d love to hear from you.
+              Whether you&apos;re looking to partner with us or join our team,
+              we&apos;d love to hear from you.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button
@@ -389,5 +515,5 @@ export default function AboutPage() {
 
       <Footer />
     </main>
-  )
+  );
 }
