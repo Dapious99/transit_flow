@@ -26,14 +26,14 @@ const contactMethods = [
     icon: Phone,
     title: 'Call Us',
     description: 'Mon-Fri from 9am to 6pm WAT',
-    value: '+234 800 123 4567',
-    href: 'tel:+2348001234567',
+    value: '07043791751',
+    href: 'tel:07043791751',
   },
   {
     icon: MapPin,
     title: 'Visit Us',
     description: 'Come say hello at our HQ',
-    value: 'Lekki Phase 1, Lagos',
+    value: '29, Nnamchi Street, Emene, Enugu',
     href: '#',
   },
 ]
